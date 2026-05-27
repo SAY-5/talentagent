@@ -57,6 +57,18 @@ jobs:
         if: failure()
         run: docker compose logs
 
+  bench-regress:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e .
+      - name: Match path regression gate
+        working-directory: bench
+        run: python check_regression.py --size 5000 --repeats 5
+
   build-images:
     runs-on: ubuntu-latest
     steps:

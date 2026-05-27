@@ -1,0 +1,5 @@
+{
+  "note": "Required throughput floor for the match path on a 5000-candidate corpus. Local runs measured about 12600 candidates/second; this floor is set well below that so the 30 percent regression gate holds across slower CI runners.",
+  "corpus_size": 5000,
+  "candidates_per_second": 4000.0
+}
