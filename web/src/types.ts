@@ -24,6 +24,7 @@ export interface MatchReport {
   role: { title: string; required_skills: string[]; min_years: number };
   needs_review: boolean;
   review_reason: string;
+  confidence: number;
   matches: Match[];
 }
 

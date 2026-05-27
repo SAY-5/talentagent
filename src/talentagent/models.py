@@ -97,4 +97,5 @@ class MatchReport:
     matches: tuple[RankedMatch, ...]
     needs_review: bool
     review_reason: str
+    confidence: float = 0.0
     tool_log: tuple[str, ...] = field(default_factory=tuple)

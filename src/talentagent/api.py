@@ -27,6 +27,7 @@ def _serialize(report: MatchReport) -> dict[str, object]:
         },
         "needs_review": report.needs_review,
         "review_reason": report.review_reason,
+        "confidence": report.confidence,
         "matches": [
             {
                 "id": m.candidate.id,

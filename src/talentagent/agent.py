@@ -56,11 +56,12 @@ class MatchAgent:
         log: list[str] = []
         pool = self._gather(role, log)
         matches = rank_candidates(role, pool, self._provider, top_k=top_k)
-        needs_review, reason = self._gate.assess(matches)
+        decision = self._gate.decide(matches)
         return MatchReport(
             role=role,
             matches=tuple(matches),
-            needs_review=needs_review,
-            review_reason=reason,
+            needs_review=decision.needs_review,
+            review_reason=decision.reason,
+            confidence=decision.confidence,
             tool_log=tuple(log),
         )

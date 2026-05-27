@@ -75,11 +75,13 @@ export default function App() {
         <section className="results">
           {report.needs_review ? (
             <p className="banner banner--review" data-testid="review-banner">
-              Flagged for human review: {report.review_reason}
+              Flagged for human review: {report.review_reason} (confidence{" "}
+              {Math.round(report.confidence * 100)}%)
             </p>
           ) : (
             <p className="banner banner--ok" data-testid="confident-banner">
-              Confident match: {report.review_reason}
+              Confident match: {report.review_reason} (confidence{" "}
+              {Math.round(report.confidence * 100)}%)
             </p>
           )}
           {report.matches.map((m, i) => (

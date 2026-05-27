@@ -24,3 +24,4 @@ def test_match_endpoint_returns_explanations():
     assert len(body["matches"]) == 3
     assert "explanation" in body["matches"][0]
     assert "needs_review" in body
+    assert 0.0 <= body["confidence"] <= 1.0
