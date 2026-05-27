@@ -32,7 +32,7 @@ talentagent = ["py.typed"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "--cov=talentagent --cov-report=term-missing --cov-fail-under=85"
+addopts = "--cov=talentagent --cov-report=term-missing --cov-fail-under=90"
 
 [tool.ruff]
 line-length = 90
